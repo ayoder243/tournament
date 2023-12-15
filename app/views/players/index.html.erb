@@ -1,0 +1,43 @@
+<% if player_signed_in? %>
+<p>Welcome: <%= current_player.p_name %>
+<%= link_to 'Profile', player_path(current_player.id) %>
+<%= link_to 'Sign out', destroy_player_session_path, data: { turbo_method: :delete } %>
+<% else %>
+<%= link_to 'Sign In', new_player_session_path %>
+<%= link_to 'Sign Up', new_player_registration_path %>
+<% end %>
+
+<h1>Syndicate Scoreboard</h1>
+<table>
+    <tr>
+        <th>Syndicate</th>
+        <th>Round Wins</th>
+        <th>Match Wins</th>
+    </tr>
+    <% ["Adamant Hands", "Curators Maxima", "Song of the Chain", "Sentinels of Eternity", "Guardians of the Source"].each do |syn| %>
+    <tr>
+        <td><%= syn %></td>
+        <td><%= @players.where(syndicate: syn).sum(:s_wins) %></td>
+        <td><%= @players.where(syndicate: syn).sum(:p_wins) %></td>
+    </td>
+    <% end %>
+</table>
+
+<% ["Adamant Hands", "Curators Maxima", "Song of the Chain", "Sentinels of Eternity", "Guardians of the Source"].each do |syn| %>
+<h1><%= syn %> Scoreboard</h1>
+<table>
+    <tr>
+        <th>Player</th>
+        <th>Round Wins</th>
+        <th>Match Wins</th>
+    </tr>
+    <% @players.where(syndicate: syn).each do |player| %>
+    <tr>
+        <td><%= player.p_name %></td>
+        <td><%= player.s_wins %></td>
+        <td><%= player.p_wins %></td>
+    </td>
+    <% end %>
+</table>
+<% end %>
+<br >

@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Player.delete_all
+Syndicate.delete_all
+[["Adamant Hands", 1], ["Curators Maxima", 2], ["Song of the Chain", 3], ["Sentinels of Eternity", 4], ["Guardians of the Source", 5]].each do |syndicate|
+    Syndicate.find_or_create_by!(s_name: syndicate[0], s_wins: 0, id:syndicate[1])
+end

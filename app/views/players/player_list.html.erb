@@ -1,0 +1,5 @@
+<ul>
+    <% @players.each do |player| %>
+    <li><%= link_to player.p_name, edit_player_path(player.id) %></li>
+    <% end %>
+<ul>

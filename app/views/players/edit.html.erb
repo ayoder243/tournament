@@ -1,0 +1,15 @@
+editing <%= @player.p_name %>
+<br>
+Syndicate: <%= @player.syndicate %>
+<br>
+Second Choice: <%= @player.second_choice %>
+<br>
+    <%= form_with model: @player, url: player_path(@player.id), method: :patch do |f| %>
+    <%= f.label :p_wins %>
+    <%= f.text_field :p_wins, value: @player.s_wins %>
+    <%= f.label :s_wins %>
+    <%= f.text_field :s_wins, value: @player.s_wins %>
+    <%= f.label :syndicate %>
+    <%= f.select :syndicate, ["Adamant Hands", "Curators Maxima", "Song of the Chain", "Sentinels of Eternity", "Guardians of the Source"], selected: @player.syndicate %>
+    <%= f.submit "Update Player" %>
+    <% end %>

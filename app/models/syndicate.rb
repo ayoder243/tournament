@@ -1,0 +1,2 @@
+class Syndicate < ApplicationRecord
+end
