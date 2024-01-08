@@ -1,0 +1,5 @@
+<ul>
+    <% @matches.each do |match| %>
+    <li><%= link_to Player.find(match.player1).p_name + " vs " + Player.find(match.player2).p_name, edit_match_path(match.id) %></li>
+    <% end %>
+<ul>

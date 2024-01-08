@@ -1,0 +1,9 @@
+editing <%= Player.find(@match.player1).p_name + " vs " + Player.find(@match.player2).p_name %>%
+<br>
+    <%= form_with model: @match, url: match_path(@match.id), method: :patch do |f| %>
+    <%= f.label :player1_score, Player.find(@match.player1).p_name %>
+    <%= f.text_field :player1_score, value: @match.player1_score %>
+    <%= f.label :player2_score, Player.find(@match.player2).p_name %>
+    <%= f.text_field :player2_score, value: @match.player2_score %>
+    <%= f.submit "Update Player" %>
+    <% end %>

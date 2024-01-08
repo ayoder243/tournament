@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
 
   resources :players, only: [:index, :show, :update, :edit]
+  resources :matches, only: [:index, :update, :edit]
   get 'player_list', to: 'players#player_list'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

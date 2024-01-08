@@ -1,0 +1,16 @@
+email,encrypted_password,p_name,syndicate
+test1@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,1,Adamant Hands
+test2@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,2,Adamant Hands
+test3@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,3,Adamant Hands
+test4@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,4,Curators Maxima
+test5@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,5,Curators Maxima
+test6@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,6,Curators Maxima
+test7@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,7,Song of the Chain
+test8@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,8,Song of the Chain
+test9@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,9,Song of the Chain
+test10@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,10,Sentinels of Eternity
+test11@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,11,Sentinels of Eternity
+test12@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,12,Sentinels of Eternity
+test13@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,13,Guardians of the Source
+test14@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,14,Guardians of the Source
+test15@test.com,$2a$12$GtQ8eKeBaqtSpeaebNE1juN2FA0l.pLZYoBUvlXIRXrKLkocTWklu,15,Guardians of the Source

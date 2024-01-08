@@ -6,6 +6,28 @@
 <%= link_to 'Sign Up', new_player_registration_path %>
 <% end %>
 
+<h1>Your Matches</h1>
+<table>
+    <tr>
+        <th>Opponent</th>
+        <th>Wins</th>
+        <th>Loses</th>
+    </tr>
+    <% @matches.each do |match| %>
+    <tr>
+        <% if match.player1 == current_player.id %>
+            <td><%= @players.find(match.player2).p_name %></td>
+            <td><%= match.player1_score %></td>
+            <td><%= match.player2_score %></td>
+        <% else %>
+            <td><%= @players.find(match.player1).p_name %></td>
+            <td><%= match.player2_score %></td>
+            <td><%= match.player1_score %></td>
+        <% end %>
+
+    </tr>
+    <% end %>
+</table>
 <h1>Syndicate Scoreboard</h1>
 <table>
     <tr>

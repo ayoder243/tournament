@@ -10,7 +10,9 @@ class PlayersController < ApplicationController
     end
 
     def show
-        @players = Player.where(syndicate: current_player.syndicate)
+        @players = Player.all
+        @player = Player.find(current_player.id)
+        @matches = Match.where(player1: current_player.id).or(Match.where(player2: current_player.id))
     end
 
     def edit
@@ -19,7 +21,6 @@ class PlayersController < ApplicationController
 
     def update
         @player = Player.find(params[:id])
-        puts @player
         if @player.update(user_req)
             flash[:success]="Profile Updated"
             redirect_to players_path
