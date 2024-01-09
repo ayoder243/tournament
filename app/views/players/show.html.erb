@@ -60,6 +60,7 @@
     <% end %>
 </table>
 <br >
-<% if current_player.p_name == 'randomflea' %>
-    <%= link_to 'Update Stuff', player_list_path() %>
+<% if current_player.admin == true %>
+    <%= link_to 'Update Player', player_list_path() %><br>
+    <%= link_to 'Update Match', matches_path() %>
 <% end %>
