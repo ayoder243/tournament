@@ -6,8 +6,11 @@ Rails.application.routes.draw do
 
 
   resources :players, only: [:index, :show, :update, :edit]
-  resources :matches, only: [:index, :update, :edit]
+  resources :matches, only: [:index, :update, :edit, :new, :create]
+
   get 'player_list', to: 'players#player_list'
+  get 'matches_list', to: 'matches#matches_list'
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

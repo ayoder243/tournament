@@ -9,12 +9,16 @@
 <%= link_to 'Sign Up', new_player_registration_path %>
 <% end %>
 
-<ul>
-    <% @players.each do |player| %>
-    <li><%= link_to player.p_name, edit_player_path(player.id) %></li>
-    <% end %>
-<ul>
-
+<h1>Create Match</h1>
+<%= form_with model: @match do |form| %>
+    <%= form.label :player1, "Player 1: " %>
+    <%= form.collection_select :player1, Player.order(:p_name), :id, :p_name %>
+    <%= form.label :player2, "Player 2: " %>
+    <%= form.collection_select :player2, Player.order(:p_name), :id, :p_name %>
+    <%= form.hidden_field :player1_score, value: 0 %>
+    <%= form.hidden_field :player2_score, value: 0 %>
+    <%= form.submit "Create Match" %>
+<% end %>
 
 <% if player_signed_in? && current_player.admin == true %>
     <%= link_to 'Update Player', player_list_path() %><br>

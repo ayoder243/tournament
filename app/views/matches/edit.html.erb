@@ -1,3 +1,14 @@
+<% if player_signed_in? %>
+<p>Welcome: <%= current_player.p_name %>
+<%= link_to 'Home', root_path %>
+<%= link_to 'Profile', player_path(current_player.id) %>
+<%= link_to 'All Matches', matches_list_path %>
+<%= link_to 'Sign out', destroy_player_session_path, data: { turbo_method: :delete } %>
+<% else %>
+<%= link_to 'Sign In', new_player_session_path %>
+<%= link_to 'Sign Up', new_player_registration_path %>
+<% end %>
+
 editing <%= Player.find(@match.player1).p_name + " vs " + Player.find(@match.player2).p_name %>%
 <br>
     <%= form_with model: @match, url: match_path(@match.id), method: :patch do |f| %>
@@ -7,3 +18,10 @@ editing <%= Player.find(@match.player1).p_name + " vs " + Player.find(@match.pla
     <%= f.text_field :player2_score, value: @match.player2_score %>
     <%= f.submit "Update Player" %>
     <% end %>
+
+
+<% if player_signed_in? && current_player.admin == true %>
+    <%= link_to 'Update Player', player_list_path() %><br>
+    <%= link_to 'Update Match', matches_path() %><br>
+    <%= link_to 'Create Match', new_match_path() %>
+<% end %>

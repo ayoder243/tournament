@@ -9,12 +9,12 @@
 <%= link_to 'Sign Up', new_player_registration_path %>
 <% end %>
 
+<h1>All Matches</h1>
 <ul>
-    <% @players.each do |player| %>
-    <li><%= link_to player.p_name, edit_player_path(player.id) %></li>
+    <% @matches.each do |match| %>
+        <li><%= Player.find(match.player1).p_name + ' vs ' + Player.find(match.player2).p_name + ' (' + match.player1_score.to_s + ' - ' + match.player2_score.to_s + ')' %>
     <% end %>
-<ul>
-
+</ul>
 
 <% if player_signed_in? && current_player.admin == true %>
     <%= link_to 'Update Player', player_list_path() %><br>
