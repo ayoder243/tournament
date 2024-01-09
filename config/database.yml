@@ -80,5 +80,5 @@ test:
 production:
   <<: *default
   database: tournament_production
-  username: tournament
-  password: <%= ENV["TOURNAMENT_DATABASE_PASSWORD"] %>
+  username: deploy
+  password: <%= ENV["DATABASE_PASSWORD"] %>
